@@ -2,15 +2,18 @@
 Problem 1: If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
 The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.*/
 
-var total = 0;
+var problem1 = function() {
 
-// do/while limits input to sane values
-do { num = prompt("Enter a number (0 to 100,000): ") } while (num > 100000); 
+	var total = 0;
+	var limit1 = document.getElementById('num1');
 
-for (i = 1; i < num; i++) {
-  if (i % 3 === 0 || i % 5 === 0) {
-    total += i;
-  }
+ 	// IMPORTANT !!! add ".value" otherwise to generate number. Otherwise will be zero
+	for (i = 1; i < num1.value; i++) { 
+	  if (i % 3 === 0 || i % 5 === 0) {
+	    total += i;
+	  }
+	}
+
+	//console.log("Sum of all multiples of 3 or 5 below " + num + ": " + total);
+	document.getElementById('final_result').innerHTML = total;
 }
-
-console.log("Sum of all multiples of 3 or 5 below " + num + ": " + total);
